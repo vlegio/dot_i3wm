@@ -1,5 +1,5 @@
 #!/bin/bash
-if test -f "/sys/class/power_supply/BAT1"; then
+if test -f "/sys/class/power_supply/BAT1/capacity"; then
 
 BAT=$(acpi -b | awk -F ": " '{print $2}')
 

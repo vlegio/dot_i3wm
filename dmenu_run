@@ -3,7 +3,7 @@ set -o errexit
 
 HISTORY="$HOME/.drun_history"
 test -f "$HISTORY" || touch "$HISTORY"
-INPUT=$(rofi -dmenu -mesg RunApp -p app -only-match < "$HISTORY")
+INPUT=$(rofi -dmenu -mesg RunApp -p app < "$HISTORY")
 test -n "$INPUT"
 
 # aliases

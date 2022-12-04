@@ -12,7 +12,7 @@
 set $mod Mod4
 exec --no-startup-id setxkbmap -layout us,ru
 exec --no-startup-id setxkbmap -option grp:caps_toggle 'us,ru' -option grp_led:caps
-exec --no-startup-id feh --bg-fill ~/.config/i3/background.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/static/background.png
 exec --no-startup-id picom -CGb
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -29,7 +29,7 @@ font pango:monospace 8
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-bindsym $mod+l exec "i3lock -i ~/.config/i3/background.png ; conky -c ~/.config/i3/lockconky.cfg -w $(xwininfo -name i3lock | awk '/xwininfo/ {print $4}')"
+bindsym $mod+l exec "i3lock -i ~/.config/i3/static/background.png ; conky -c ~/.config/i3/configs/ockconky.cfg -w $(xwininfo -name i3lock | awk '/xwininfo/ {print $4}')"
 
 
 
@@ -46,7 +46,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86Calculator exec --no-startup-id cantor
-bindsym Print exec ~/.config/i3/screenshots.sh
+bindsym Print exec ~/.config/i3/scripts/screenshots.sh
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -57,11 +57,11 @@ bindsym $mod+Return exec uxterm
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec ~/.config/i3/dmenu_run
+bindsym $mod+d exec ~/.config/i3/scripts/dmenu_run.sh
 bindsym $mod+Shift+s exec rofi -show ssh
 bindsym Mod1+Tab exec rofi -show window
-bindsym Mod1+Shift+Tab exec ~/.config/i3/conkypanel
-bindsym $mod+Shift+h exec ~/.config/i3/shutdown
+bindsym Mod1+Shift+Tab exec ~/.config/i3/scripts/conkypanel.sh
+bindsym $mod+Shift+h exec ~/.config/i3/scripts/shutdown.sh
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-	status_command i3blocks -c ~/.config/i3/block.cfg
+	status_command i3blocks -c ~/.config/i3/configs/block.cfg
 }
 
 for_window [workspace=$ws9] layout tabbed

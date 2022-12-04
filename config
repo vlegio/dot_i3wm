@@ -10,6 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+exec --no-startup-id setxkbmap -layout us,ru
+exec --no-startup-id setxkbmap -option grp:caps_toggle 'us,ru' -option grp_led:caps
 exec --no-startup-id feh --bg-fill ~/.config/i3/background.png
 exec --no-startup-id picom -CGb
 

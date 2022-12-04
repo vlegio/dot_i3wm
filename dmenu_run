@@ -11,7 +11,7 @@ case "$INPUT" in
     telegram)
         CMD="telegram-desktop" ;;
     ide)
-	CMD="/opt/jetbrains-toolbox-1.26.5.13419/jetbrains-toolbox" ;;
+	CMD="/opt/jetbrains-toolbox/jetbrains-toolbox" ;;
     mpd)
 	CMD="uxterm -class MPD /usr/bin/ncmpcpp" ;;
     slicer-sla)

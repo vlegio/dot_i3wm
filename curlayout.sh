@@ -3,9 +3,9 @@ COMMAND=$(xset -q | grep LED | awk '{ print $10 }')
 
 case "$COMMAND" in
 
- "00000000"|"00000001") LAYOUT="EN" ;;
+ "00000000"|"00000001" | "00000002") LAYOUT="EN" ;;
 
- "00001004"|"00001005") LAYOUT="RU" ;;
+ "00001004"|"00001005" | "00001007") LAYOUT="RU" ;;
 
   *) LAYOUT="??" ;;
 

@@ -2,10 +2,10 @@
 
 save_location="$HOME/Pictures/Screenshots"
 screenshot_path="$save_location/$(date +'%Y-%m-%d-%H%M%S').png"
-screen='Screen'
-area='Area'
-window='Window'
-gif='GIF'
+screen=' Screen'
+area=' Area'
+window=' Window'
+gif=' GIF'
 chosen=$(printf '%s;%s;%s;%s\n' "$screen" "$area" "$window" "$gif" \
      | rofi -dmenu \
             -sep ';' \

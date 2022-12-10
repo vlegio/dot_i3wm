@@ -10,10 +10,10 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-exec --no-startup-id "setxkbmap -layout us,ru"
-exec --no-startup-id "setxkbmap -option grp:caps_toggle 'us,ru' -option grp_led:caps"
-exec --no-startup-id "feh --bg-fill ~/.config/i3/static/background.png"
-exec --no-startup-id "picom -CGb"
+exec --no-startup-id setxkbmap -layout us,ru
+exec --no-startup-id setxkbmap -option grp:caps_toggle 'us,ru' -option grp_led:caps
+exec --no-startup-id feh --bg-fill ~/.config/i3/static/background.png
+exec --no-startup-id picom -CGb
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,7 +29,7 @@ font pango:monospace 8
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock.sh
-bindsym $mod+l exec "~/.config/i3/scripts/lock.sh"
+bindsym $mod+l exec ~/.config/i3/scripts/lock.sh
 
 
 

@@ -12,11 +12,11 @@ INPUT=$(printf '%s;%s;%s;%s\n' "$HALT" "$REBOOT" "$HIBERNATE" "$SUSPEND" \
             -sep ';' \
             -selected-row 1)
 INPUT=$(echo -ne $COMMANDS |  rofi -dmenu -mesg PowerOff -p power -only-match )
-exec ~/.config/i3/scripts/lock.sh &
+sh -c "~/.config/i3/scripts/lock.sh &"
 sleep 1;
 case "$INPUT" in
-    "$HIBERNATE") sudo systemctl hibernate ;;
-    "$HALT") sudo systemctl halt ;;
-    "$REBOOT" ) sudo systemctl reboot;;
-    "$SUSPEND" ) sudo systemctl suspend-then-hibernate ;;
+    "$HIBERNATE") sh -c "systemctl hibernate" ;;
+    "$HALT") systemctl halt ;;
+    "$REBOOT" ) sh -c "systemctl reboot";;
+    "$SUSPEND" ) systemctl suspend-then-hibernate ;;
 esac
